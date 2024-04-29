@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>[실습]여행지 선택</title>
+<script type="text/javascript">
+window.onload=function(){
+	//폼태그 이벤트 연결
+	form.onsubmit=function(){
+		//이름 필수 입력 유효성 체크
+		const name = document.getElementById('name');
+		if(name.value.trim()==''){
+			alert('이름을 입력하세요!');
+			name.value='';//공백이 있을 경우 공백 제거
+			name.focus();
+			return false;			
+		//여행지는 2개 이상 필수 입력
+		const e
+		
+		}
+	
+	
+	
+};
+</script>
+</head>
+<body>
+<!--  
+서블릿 주소 : /ch03_Jsp/travel
+method : post
+
+이름(name)-text,여행지 선택(city)checkbox
+(서울 뉴욕 런던 파리)
+
+여행지 출력시 ,로 나열
+-->
+<h3>여행지를 선택하세요 (2개 이상 선택)</h3>
+<form action="/ch03_Jsp/travel" method="post" id="myForm">
+	이름 : <input type="text" name="name" id="name"><br>
+	여행지선택<br>
+	<input type="checkbox" name="city" value="서울" class="cb-city">서율
+	<input type="checkbox" name="city" value="뉴욕" class="cb-city">뉴욕
+	<input type="checkbox" name="city" value="런던" class="cb-city">런던
+	<input type="checkbox" name="city" value="파리" class="cb-city">파리
+	<input type="submit" value="전송">
+</form>
+
+</body>
+</html>

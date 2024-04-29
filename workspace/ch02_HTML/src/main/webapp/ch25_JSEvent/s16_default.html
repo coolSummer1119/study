@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>기본 이벤트</title>
+<script type="text/javascript">
+	window.onload=function(){
+		const alink = document.getElementById('alink');
+		//이벤트 연결
+		alink.onclick = function(){
+			alert('이벤트 연결');
+			//기본이벤트 제거
+			return false; //네이버로 안들어감
+		};
+		
+		const myForm = document.getElementById('myForm');
+		//이벤트 연결
+		myForm.onsubmit=function(){
+			const name = document.getElementById('name');
+			alert(name.value);//내가 입력한 값이 value로 들어가고이후에 a.jsp실행
+			//기본 이벤트 제거
+			return false;
+		};
+	};
+</script>
+</head>
+<body>
+<a id="alink" href="https://www.naver.com">이동</a>
+<form id="myForm" action="a.jsp" method="post">
+	이름 <input type="text" name="name" id="name"><!-- name값은 서버 프로그램에서 사용/ 아이디는 자바스크립트와 css에서 사용 -->
+	<input  type="submit" value="전송">
+</form>
+</body>
+</html>

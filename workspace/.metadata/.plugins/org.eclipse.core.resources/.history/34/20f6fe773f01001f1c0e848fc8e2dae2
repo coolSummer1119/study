@@ -1,0 +1,26 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page import="java.util.Enumeration" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>application 속성 보기</title>
+</head>
+<body>
+<!-- id가 브라우저를 지워도 남아있게 되는데 지우기 위해서는 servers에서 멈췄다 키지 않으면 남아있음. -->
+<%
+	Enumeration<String> attrEnum = application.getAttributeNames();
+	while(attrEnum.hasMoreElements()){
+		//속성명
+		String name = attrEnum.nextElement();
+		//속성값
+		Object value = application.getAttribute(name);
+%>
+application 속성 : <b><%= name %></b> = <%= value %><br>
+<%		
+		
+	}
+%>
+</body>
+</html>

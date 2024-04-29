@@ -1,0 +1,39 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>[실습]회원가입</title>
+</head>
+<body>
+<%-- 이름 (name), 아이디(id), 비밀번호(password), 전화번호(phone),취미(hobby) -영화보기, 음악감상, 등산, 낚시, 춤
+	자기소개(content) - textarea
+	
+	s06_register.jsp로 전송 , 전송 방식post
+	출력예시
+	이름 : 홍길동 (필수)
+	아이디 : dragon (필수)
+	비밀번호 : 1234 (필수)
+	전화번호 : 010-1234-5678
+	자기소개 : 서울에서 태어나서 계속 서울 거주
+ --%>
+<form action="s06_register.jsp" method="post">
+	이름 : <input type="text" name="name"	id="name"><br>
+	아이디 : <input type="text" name="id"	id="id"><br>
+	비밀번호 : <input type="text" name="password"	id="password"><br>
+	전화번호 : <input type="text" name="phone"	id="phone"><br>
+	취미
+	<input type="checkbox" name="hobby"	value="영화보기">영화보기
+	<input type="checkbox" name="hobby"	value="음악감상">음악감상
+	<input type="checkbox" name="hobby"	value="등산">등산
+	<input type="checkbox" name="hobby"	value="낚시">낚시
+	<input type="checkbox" name="hobby"	value="춤">춤
+	<br>
+	자기소개
+	<br>
+	<textarea rows="5" cols="50" name="content"></textarea>
+	
+</form>
+</body>
+</html>

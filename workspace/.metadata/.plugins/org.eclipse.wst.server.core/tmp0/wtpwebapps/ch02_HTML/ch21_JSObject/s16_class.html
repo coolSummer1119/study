@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>class</title>
+</head>
+<body>
+<script type="text/javascript">
+	class Person{
+		//클래스 필드
+		name = 'Smith';
+		//메서드
+		//key값
+		getName = function(){
+			return this.name;//객체 안에 있는 속성.
+		};
+	}
+	//객체 생성
+	const me =new Person();
+	
+	document.write(me); //[object Object]
+	document.write('<br>');
+	
+	document.write(me.name);//smith
+	document.write('<br>');
+	
+	document.write(me.getName());//smith  /  괄호를 붙이지 않으면 메서드 문자 그대로 출력
+</script>
+</body>
+</html>

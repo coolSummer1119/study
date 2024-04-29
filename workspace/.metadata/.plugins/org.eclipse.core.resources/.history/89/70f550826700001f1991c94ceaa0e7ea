@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>[실습] 성적 처리</title>
+<script type="text/javascript">
+window.onload=function(){
+	const myForm = document.getElementById('myForm');
+	myForm.onsubmit=function(){
+		const name = document.getElementById('name');
+		if(name.value.trim()==''){
+			alert('이름을 입력하세요!');
+			name.value='';//공백이 있을 경우 공백 제거
+			name.focus();
+			return false;
+		}
+		
+		//반복문을 이용한 유효성 체크(배열)
+		const items = document.querySelectorAll('input[type="number"]');
+		
+		for(let i=0;i<items.length;i++){
+			//입력을 하지 않았거나 공백을 입려한 경우.)
+			if(items[i].value.trim()==''){
+				const label = document.querySelector('label[for="'+items[i].id+'"]');
+				/* const label_text = label.textContent; */ //태그 내용을 가져오기
+				alert(label.innerHTML);
+				//alert(items[i].name+"점수를 입력하시오."); - 가능하나 korean english math로 출력
+			}
+		}
+	}
+	
+}
+</script>
+</head>
+<body>
+<form action="/ch03_Jsp/score" id="myForm" method="post" >
+	이름 : <input type="text" name="name" id="name">
+	<ul>
+		<li>
+			<label for="korean">국어</label>		
+			<input type="number" name="korean" id="korean">
+		</li>
+		<li>
+			<label for="english">영어</label>		
+			<input type="number" name="english" id="english">
+		</li>
+		<li>
+			<label for="math">수학</label>		
+			<input type="number" name="math" id="math">
+		</li>
+	</ul>
+<input type="submit" value="전송">
+</form>
+</body>
+</html>

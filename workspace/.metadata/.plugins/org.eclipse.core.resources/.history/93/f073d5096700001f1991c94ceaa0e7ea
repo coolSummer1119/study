@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>[실습] 성적 처리</title>
+<script type="text/javascript">
+window.onload=function(){
+	const myForm = document.getElementById('myForm');
+	myForm.onsubmit=function(){
+		const name = document.getElementById('name');
+		if(name.value.trim()==''){
+			alert('이름을 입력하세요!');
+			name.value='';//공백이 있을 경우 공백 제거
+			name.focus();
+			return false;
+		}
+		
+		const korean = document.getElementById('korean');
+		if(korean.value!=null){
+			if(korean.value>=0&&korean.value<=100){
+				
+			}else{
+				alert('점수를 100과 0사이에 숫자를 입력해주세요');
+				korean.value='';
+				korean.focus();
+				return false;
+			}
+		}else{
+			alert('점수를 입력해주세요');
+			korean.focus();
+			return false;
+		}
+	}
+	
+}
+</script>
+</head>
+<body>
+<form action="/ch03_Jsp/score" id="myForm" method="post" >
+	이름 : <input type="text" name="name" id="name">
+	<ul>
+		<li>
+			<label for="korean">국어</label>		
+			<input type="number" name="korean" id="korean">
+		</li>
+		<li>
+			<label for="english">영어</label>		
+			<input type="number" name="english" id="english">
+		</li>
+		<li>
+			<label for="math">수학</label>		
+			<input type="number" name="math" id="math">
+		</li>
+	</ul>
+<input type="submit" value="전송">
+</form>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page import="kr.util.DBUtil" %>
+<%@ page import="java.sql.Connection" %>
+<%@ page import="java.sql.PreparedStatement" %>
+<%@ page import="java.sql.ResultSet" %>
+<%@ page import="java.sql.Date" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>제품 목록</title>
+<link rel="stylesheet" href="../CSS/style.css" type="text/css">
+</head>
+<body>
+<h1>제품 목록</h1>
+<div class="align-right">
+	<input type="button" value="제품등록" onclick="location.href='insertTestForm.jsp'">
+</div>
+<%
+	Connection conn=null;
+	PreparedStatement pstmt = null;
+	ResultSet rs = null;
+	String sql = null;
+	
+	try{
+		conn=DBUtil.getConnection();
+		
+		sql = "SELECT * FROM product ORDERD BY num DESC";
+		
+		pstmt = conn.prepareStatement(sql);
+		
+		rs = pstmt.executeQuery();
+		
+%>
+	<table class="align-center">
+		<tr>
+			<th>제품명</th>
+			<th>가격</th>
+			<th>수량</th>
+			<th>원산지</th>
+			<th>등록 일자</th>
+		</tr>
+<%		
+	while(rs.next()){
+		String name = rs.getString("name");
+		int price = rs.getInt("price");
+		int stock = rs.getInt("stock");
+		String origin = rs.getString("origin");
+%>
+		<tr>
+			<td><%=name %>
+		</tr>	
+<%
+		
+	}
+	}catch(Exception e){
+		
+	}finally{
+		DBUtil.excuteClose(rs, pstmt, conn);
+	}
+%>
+
+</table>
+</body>
+</html>

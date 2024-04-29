@@ -1,0 +1,26 @@
+package kr.web.ch03;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.annotation.WebServlet;
+
+@WebServlet("/score")
+public class ScoreServlet extends HttpServlet {
+	@Override
+	public void doPost(HttpServletRequest request, HttpServletResponse response)throws IOException,ServletException{
+		//성적 처리
+		//국어,영어,수학,총점,평균,등급 출력
+		//문서 타입 및 캐릭터 셋
+		response.setContentType("text/html;charset=utf-8");
+		
+		//문서 타입 인코딩
+		response.getCharacterEncoding("utf-8");
+		
+	}
+
+}
