@@ -1,0 +1,15 @@
+package kr.member.vo;
+
+import java.sql.Date;
+
+//자바빈,VO(Value Object)
+public class MemberVO {
+	//프로퍼티
+	private int num;
+	private String id;
+	private String name;
+	private String passwd;
+	private String email;
+	private String phone;
+	private Date reg_date;
+}

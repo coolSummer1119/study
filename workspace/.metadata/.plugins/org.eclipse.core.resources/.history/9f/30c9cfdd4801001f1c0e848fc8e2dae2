@@ -1,0 +1,18 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>음식주문</title>
+</head>
+<body>
+<form action="s19_order.jsp" method="post" id="myForm">
+	<table>
+		<tr>
+			<td class="title">식사류</td>
+		</tr>
+	</table>
+</form>
+</body>
+</html>

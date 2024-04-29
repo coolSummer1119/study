@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>내부함수</title>
+</head>
+<body>
+<script type="text/javascript">
+	function f(){
+		let n = 123;
+		//내부함수
+		function g(){
+			document.write('n = ' + n + '<br>');
+			document.write('g 함수 호출');
+		}
+		//내부함수 호출
+		g();
+	}
+	
+	//함수호출
+	f();
+</script>
+</body>
+</html>

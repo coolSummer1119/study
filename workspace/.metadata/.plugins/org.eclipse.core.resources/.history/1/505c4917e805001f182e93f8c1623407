@@ -1,0 +1,6 @@
+package kr.web.member;
+
+//VO(Value Object), 자바빈
+public class MemberVO {
+
+}

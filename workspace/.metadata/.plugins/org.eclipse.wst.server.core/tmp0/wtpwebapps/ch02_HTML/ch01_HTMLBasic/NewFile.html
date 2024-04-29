@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>롯데 자이언츠 홈페이지</title>
+<style type="text/css">
+*{
+	margin:0;
+	padding:0;
+}
+body{
+	font-family: '맑은 고딕','Malgun Gothic',Gothic,sans-serif;
+	width:1000px;
+	margin:0 auto;
+	background-color: rgb(108,172,228);
+}
+#page_wrap{
+	background: white;
+	margin: 40px 0;
+	padding:10px 20px;
+	border-radius:5px;
+	box-shadow: 0 2px 6px rgba(100,100,100,0.3);
+}
+#emb{
+	margin-left:40px;
+}
+
+a{
+	text-decoration:none;
+}
+.outer-menu{
+	list-style: none;
+}
+.inner-menu{
+	list-style: none;
+}
+h2{
+	margin: 30px 0 0 20px;
+	padding:0;
+}
+h3{
+	margin-left: 20px;
+	margin-bottom: 30px;
+	padding:0;
+}
+.title-menu{
+	display:block;
+	font-size:30px;
+	color:white;
+	width:200px; 
+	margin: 10px auto;
+	text-align: center;
+}
+start_left{
+	background: rgb(4,30,66);
+	margin: 40px 0;
+	padding:10px 20px;
+	border-radius:5px;
+	box-shadow: 0 2px 6px rgba(100,100,100,0.3);
+}
+#nav{
+	border-top:4px solid #ffffff;
+	border-bottom:4px solid #ffffff;
+	margin-bottom: 20px;
+	height:60px;
+	background-color: rgb(4,30,66);
+}
+.outer-menu{
+	float:right;
+}
+.outer-menu-item{
+	font-family:'..//files/Giants-Regular.ttf', '맑은 고딕';
+	float:left;
+	position: relative;
+}
+.outer-menu-item:hover{
+	background:rgb(4,30,66);
+	color:red;
+}
+.outer-menu-item:hover .inner-menu{
+	display:block;
+}
+.inner-menu{
+	display:none;
+	position: absolute;
+	top: 60px;
+	width:100%;
+	background: white;
+	box-shadow: 0 2px 6px rgba(5,5,5,0.9);
+	z-index:100;
+	text-align:center;
+}
+.inner-menu>a{
+	display:block;
+	color:white
+}
+.inner-menu-item > a:hover{
+	background: rgb(4,30,66);
+	color: white;
+}
+</style>
+</head>
+<body>
+<div id="page_warp">
+<!-- header 시작 -->
+<header>
+	<h2>롯데 자이언츠</h2>
+	<h3>Lotte Giants</h3>
+</header>
+<!-- header 끝 -->
+<!-- nav 시작 -->
+<nav id="nav">
+	<div id="start_left">
+	<img id=emb src="..//files/emblum.png">
+		<ul class="outer-menu">
+			<li class="outer-menu-item">
+				<span class="title-menu">소개</span>
+					<ul class="inner-menu">
+						<li><a href="#">구단 소개</a></li>
+						<li><a href="#">구장 소개</a></li>
+					</ul>
+			</li>
+			<li class="outer-menu-item">
+				<span class="title-menu">선수단 소개</span>
+					<ul class="inner-menu">
+						<li><a href="#">감독</a></li>
+						<li><a href="#">코치</a></li>
+						<li><a href="#">투수</a></li>
+						<li><a href="#">포수</a></li>
+						<li><a href="#">내야수</a></li>
+						<li><a href="#">외야수</a></li>
+					</ul>
+			</li>
+			<li class="outer-menu-item">
+				<span class="title-menu">이벤트</span>
+					<ul class="inner-menu">
+						<li><a href="#">이벤트</a></li>
+						<li><a href="#">설문조사</a></li>
+						<li><a href="#">쿠폰발급</a></li>
+					</ul>
+			</li>
+			<li class="outer-menu-item">
+				<span class="title-menu">기록실</span>
+					<ul class="inner-menu">
+						<li><a href="#">팀 기록</a></li>
+						<li><a href="#">선수 기록</a></li>
+						<li><a href="#">조건별 기록</a></li>
+						<li><a href="#">역대 기록</a></li>
+					</ul>
+			</li>
+		</ul>
+	</div>
+</nav>
+</div>
+<!-- nav 끝 -->
+
+<!-- 본문 시작 -->
+<!-- 본문 끝 -->
+<!-- footer 시작 -->
+<!-- footer 끝 -->
+</body>
+</html>

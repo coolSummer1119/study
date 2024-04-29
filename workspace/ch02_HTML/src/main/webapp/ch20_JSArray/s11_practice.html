@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>실습</title>
+</head>
+<body>
+<script type="text/javascript">
+/*
+[실습]
+정수를 prompt로 5번 입력 받아서 배열에 저장하고 저장된 데이터 중 최대값과 최소값을 출력하시오.
+ */
+ 
+const array = [];
+
+for(let i = 1;i<=5;i++){
+	score.push(Number(prompt(i+'번 숫자 입력:','')));
+}
+document.write(score + '<br>');
+
+let max= score[0], min = score[0];
+
+for(let i=1; i<score.length;i++){
+	if(max<score[i]){
+		max = score[i];
+	}
+	if(min>score[i]){
+		min = score[i];
+	}
+}
+
+
+/* for(let i in score){  //for in 반복문 버전
+	if(max<score[i]){
+		max = score[i];
+	}
+	if(min>score[i]){
+		min = score[i];
+	}	
+} */
+
+
+/* score.forEach(function(element,index,array){   //forEach 반복문 버전
+	if(max<score[i]){
+		max = element;
+	}
+	if(min>score[i]){
+		min = element;
+	}	
+}); */
+
+
+document.writ('최대 값 : ' + max + '<br>');
+document.writ('최대 값 : ' + max);
+
+
+/* 
+while(true){//내 답변
+	 var a = prompt('정수를 입력하시오', '');
+	 if (a>0){
+		 break;
+	 }
+}
+while(true){
+	 var b = prompt('정수를 입력하시오', '');
+	 if (b>0){
+		 break;
+	 }
+}
+while(true){
+	 var c = prompt('정수를 입력하시오', '');
+	 if (c>0){
+		 break;
+	 }
+}
+while(true){
+	 var d = prompt('정수를 입력하시오', '');
+	 if (d>0){
+		 break;
+	 }
+}
+while(true){
+	 var e = prompt('정수를 입력하시오', '');
+	 if (e>0){
+		 break;
+	 }
+}
+
+array.push(a,b,c,d,e);
+ */
+/* function getMax(){
+	var max = array[1];		
+	for(let i =1; i<=5 ;i++){
+		if (array[i]>max){
+			max = array[i];
+		}
+	}
+	return max;
+}
+function getMin(){
+	var min = array[1];		
+	for(let i =1; i<=5 ;i++){
+		if (array[i]<min){
+			min = array[i];
+		}
+	}
+	return min;
+}
+document.write('배열 : ' + array + '<br>');
+document.write('최대 값 : ' + getMax() + '<br>');
+document.write('최소 값 : ' + getMin());
+ */
+
+</script>
+</body>
+</html>

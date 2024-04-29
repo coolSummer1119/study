@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery를 이용한 비동기 통신 구현</title>
+<script type="text/javascript" src="../js/jquery-3.7.1.min.js"></script>
+<script type="text/javascript">
+//Ajax(Asynchronous Javascript And XML) : 자바스크립트와 xml을 이용한 비동기 통신
+</script>
+</head>
+<body>
+
+</body>
+</html>

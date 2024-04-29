@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>[실습] 성적 처리</title>
+<script type="text/javascript">
+window.onload=function(){
+	const myForm = document.getElementById('myForm');
+	myForm.onsubmit=function(){
+	
+		
+		//반복문을 이용한 유효성 체크(배열)
+		const items = document.querySelectorAll('input[type="number"]');//이름도 text라 수정해야함
+		
+		for(let i=0;i<items.length;i++){
+			//입력을 하지 않았거나 공백을 입려한 경우.)
+			if(items[i].value.trim()==''){
+				const label = document.querySelector('label[for="'+items[i].id+'"]');
+				const label_text = label.innerHTML; //태그 내용을 가져오기
+				alert(label_text + ' 항목은 필수 입력');
+				items[i].value='';
+				items[i].focus();
+				return false;
+				//alert(label.innerHTML); - 가능
+				//alert(items[i].name+"점수를 입력하시오."); - 가능하나 korean english math로 출력
+			}
+			
+			//문자인지 숫자인지 체크
+			if(isNaN(items[i].value)){
+				alert('성적은 숫자만 가능');
+				items[i].value='';
+				items[i].focus();
+				return false;
+			}
+			
+			//0~100사이 값만 인정
+			if(items[i].value < 0 || items[i].value > 100){
+				alert('0부터 100까지만 입력 가능');
+				items[i].value='';
+				items[i].focus();
+				return false;				
+			}
+		}
+	}
+	
+}
+</script>
+</head>
+<body>
+<form action="/ch03_Jsp/score" id="myForm" method="post" >
+	<ul>
+		<li>
+			<label for="korean">국어</label>		
+			<input type="number" name="korean" id="score">
+		</li>
+		<li>
+			<label for="english">영어</label>		
+			<input type="number" name="english" id="score">
+		</li>
+		<li>
+			<label for="math">수학</label>		
+			<input type="number" name="math" id="score">
+		</li>
+	</ul>
+<input type="submit" value="전송">
+</form>
+</body>
+</html>

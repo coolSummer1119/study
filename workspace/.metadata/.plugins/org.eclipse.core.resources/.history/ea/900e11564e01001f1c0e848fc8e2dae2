@@ -1,0 +1,14 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+짜장면 <%= request.getParameter("food_c0") %>개<br>
+짬 뽕 <%= request.getParameter("food_c1") %>개<br>
+볶음밥 <%= request.getParameter("food_c2") %>개<br>
+</body>
+</html>

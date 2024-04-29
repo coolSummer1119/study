@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>실습</title>
+<script type="text/javascript">
+	/*
+	 [실습]
+	 국어,영어,수학을 입력 받아서 총점, 평균을 구하여 출력.
+	 [유효성 체크]
+	 1.국어,영어,수학 필수 입력
+	 2.숫자만 입력 체크 typeof?
+	 3.0~100 값만 입력
+	 [출력]
+	 국어,영어,수학,총점,평균 출력
+	 */
+	window.onload = function(){
+		const confirm_btn = document.getElementById('confirm_btn');
+		//눌렀을 때 이벤트 실행
+		confirm_btn.onclick = getResult;
+		//이벤트 연결
+		function getResult(){
+			const korean = document.getElementById('korean');
+			if(!check(korean,'국어')){//false값이 출력되었을 경우 return
+				return;
+			}
+			const english = document.getElementById('english');
+			if(!check(english,'영어')){
+				return;
+			}
+			const math = document.getElementById('math');
+			if(!check(math,'수학')){
+				return;
+			}
+			
+			//총점구하기
+			let sum = Number(korean.value)+ Number(english.value)+ Number(math.value);//value를 넣어서 꼭 입력 값을 이용
+			//평균구하기
+			let avg = sum / 3;
+			
+			let msg = '국어 : ' + korean.value + '<br>';
+			msg += '영어 : ' + english.value + '<br>';
+			msg += '수학 : ' + math.value + '<br>';
+			msg += '총점 : ' + sum + '<br>';
+			msg += '평균 : ' + avg.toFixed(2);
+			
+			document.getElementById('result').innerHTML	= msg;
+		};
+		
+					//		 (국,영,수)
+		function check(course,name){
+			if(course.value.trim()==''){ //공백체크
+				alert(name + ' 성적을 입력하세요');
+				course.value = '';//공백이 있다면 제거
+				course.focus();
+				return false; //return을 통해 확인을 누르기 전으로 돌아가 아래 div에 삽입되는것을 막아줌
+			}
+			//문자인지 숫자인지 체크
+			if(isNaN(course.value)){
+				alert(name + ' 성적은 숫자만 가능');
+				course.value = '';
+				course.focus();
+				return false;
+			}
+			if(course.value < 0 || course.value > 100){
+				alert('0부터 100까지만 입력 가능');
+				course.value = '';
+				course.focus();
+				return false;				
+			}
+			
+			return true; // 위 조건에 걸리지 않으면 true값을 반환하면서 데이터 적용.
+		};
+		
+	};
+</script>
+</head>
+<body>
+	<form>
+		국어<input type="text" name="korean" id="korean"><br> 
+		영어<input type="text" name="english" id="english"><br> 
+		수학<input type="text" name="math" id="math"><br>
+		<input type="button" value="확인" id="confirm_btn">
+		<div id="result"></div>
+	</form>
+</body>
+</html>

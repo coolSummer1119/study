@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>실습</title>
+<style type="text/css">
+body{
+	font-family: sans-serif;
+}
+h1{
+	text-align:center;
+}
+div#game{
+	width: 450px;
+	margin: 0 auto;
+	text-align: center;
+}
+div.result-img{
+	position: relative;
+	width: 220px;
+	float: left;
+}
+div.result-img:first-child{
+	text-align:right;
+}
+div.result-img:last-child{
+	text-align:left;
+}
+div.result-img span{
+	font-size: 20px;
+	font-weight: bold;
+	border-radius: 20px;
+	width: 120px;
+	text-align: center;
+	background-color: #f4f2c6;
+	position: absolute;
+	top: 25%;
+	left:20%;
+}
+/*그림에 커서를 올리면 손바닥 아이콘으로 변하게 처리 */
+.user-option{
+	cursor: pointer;
+}
+</style>
+<script type="text/javascript">
+window.onload=function(){
+	//computer, user가 선택한 값을 표시할 이미지
+	const gameImage = document.querySelectorAll('.result-img img');
+	
+	//user가 선택하게 될 이미지
+	const userOptions = document.getElementsByClassName('user-option');
+	
+	//결과 문
+	const resultAlert = document.querySelectorAll('.result-img span');
+	//반복문을 이용한 이벤트 연결
+	for(let i=0; i<userOptions.length; i++){
+		userOptions[i].onclick=function(){
+			//누른 버튼에 따라 result값 변경
+			gameImage[1].style='';
+			gameImage[1].src='../files/timg'+i+'.png';
+			let com = Math.floor(Math.random()*3);
+			
+			if(com==0){
+				gameImage[0].style='';
+				gameImage[0].src='../files/timg0.png';
+			}else if(com==1){
+				gameImage[0].style='';
+				gameImage[0].src='../files/timg1.png';
+			}else{
+				gameImage[0].style='';
+				gameImage[0].src='../files/timg2.png';
+			}
+			
+			if(i===com){
+				resultAlert[0].innerHTML='비겼습니다.';
+				resultAlert[1].innerHTML='비겼습니다.';
+			}else if((i===0&&com===1)||(i===1&&com===2)||(i===2&&com===0)){
+				resultAlert[0].innerHTML='컴퓨터 승';
+				resultAlert[1].innerHTML='사용자 패';				
+			}else{
+				resultAlert[0].innerHTML='컴퓨터 패';
+				resultAlert[1].innerHTML='사용자 승';								
+			}
+			
+		}
+	}
+	
+};
+</script>
+</head>
+<body>
+<h1>가위바위보 게임</h1>
+<div id="game">
+	<div>
+		<img class="user-option" id="img0" src="../files/timg0.png" width="90">
+		<img class="user-option" id="img1" src="../files/timg1.png" width="90">
+		<img class="user-option" id="img2" src="../files/timg2.png" width="90">
+	</div>
+	<div>
+		<div class="result-img"><img style="display:none;" alt="컴퓨터"><span></span></div><!-- disply변경하면서 히든 풀고 span에 결과 넣기. -->
+		<div class="result-img"><img style="display:none;" alt="사용자"><span></span></div>
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+package kr.member.vo;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+import kr.member.vo.MemberVO;
+
+public class MemberDAO {
+	private static MemberDAO instance = new MemberDAO();
+	
+	public static MemberDAO getInstance() {
+		return instance;
+	}
+	//싱글턴 패턴
+	private memberDAO() {
+		
+	}
+	
+	//회원가입
+	public void insertMember(MemberVO member)throws Exception{
+		
+	}
+	//회원 상세 정보
+	public MemberVO getMember(int num)throws Exception{
+		Connection conn=null;
+		PreparedStatement pstmt =null;
+		ResultSet rs= null;
+		MemberVO member=null;
+		String sql =null;
+ 		
+		
+		
+		
+		return member;
+	}
+	//아이디 중복 체크, 로그인 체크
+	public MemberVO checkMember(String id)throws Exception{
+		Connection conn=null;
+		PreparedStatement pstmt =null;
+		ResultSet rs= null;
+		MemberVO member=null;
+		String sql =null;
+		
+
+	
+		return member;
+	}
+	//회원정보 수정
+	public void updateMember(MemberVO member)throws Exception{
+		
+	}
+	
+	//회원 탈퇴(회원 정보 삭제)
+	public void deleteMember(int num)throws Exception{
+		
+	}
+}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>[실습] 성적 처리</title>
+</head>
+<body>
+<form action="/ch03_Jsp/score" id="myForm" method="post" ></form>
+	<ul>
+		<li>
+			<label for="korean">국어</label>		
+			<input type="number" name="korean" id="korean">
+		</li>
+		<li>
+			<label for="english">영어</label>		
+			<input type="number" name="english" id="english">
+		</li>
+		<li>
+			<label for="math">수학</label>		
+			<input type="number" name="math" id="math">
+		</li>
+	</ul>
+	<input type="submit" value="전송">
+</body>
+</html>

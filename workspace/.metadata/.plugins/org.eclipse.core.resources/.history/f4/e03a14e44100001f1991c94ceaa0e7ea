@@ -1,0 +1,27 @@
+package kr.web.ch03;
+
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.ServletException;
+
+import java.io.PrintWriter;
+import java.io.IOException;
+
+@WebServlet("/todayMenu")
+public class TodayMenu extends HttpServlet{
+	@Override
+	public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+		//문서 타입과 캐릭터 셋
+		response.setContentType("text/html;charset=utf-8");
+		
+		//인코딩
+		response.setCharacterEncoding("utf-8");
+		
+		//문서 스크림 출력
+		PrintWriter out = response.getWriter();
+		
+		
+	}
+}

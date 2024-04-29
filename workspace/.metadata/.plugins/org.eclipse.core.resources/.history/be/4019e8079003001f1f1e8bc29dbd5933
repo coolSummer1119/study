@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>아이디 중복 체크</title>
+<script type="text/javascript" src="../js/jquery-3.7.1.min.js"></script>
+<script type="text/javascript">
+
+</script>
+</head>
+<body>
+<form id="insert_form" action="register.jsp" method="post">
+</form>
+</body>
+</html>

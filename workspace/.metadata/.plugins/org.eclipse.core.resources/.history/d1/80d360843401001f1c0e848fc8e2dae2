@@ -1,0 +1,27 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JSP 4개 기본객체와 영역</title>
+</head>
+<body>
+<%
+							//속성명 ,속성값
+	pageContext.setAttribute("msg1", "봄");
+%>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

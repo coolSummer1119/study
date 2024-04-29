@@ -1,0 +1,25 @@
+<%@page import="org.apache.catalina.filters.SetCharacterEncodingFilter"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>주문서 확인</title>
+</head>
+<body>
+<%
+	int[] orderArray = {4000,5000,6000};
+	//인코딩 타입 지정
+	request.setCharacterEncoding("utf-8");
+	
+	int total=0;
+	
+	String orderName="";
+	
+	int food_c0 = Integer.parseInt(request.getParameter("food_c0"));
+	int food_c1 = Integer.parseInt(request.getParameter("food_c1"));
+	int food_c2 = Integer.parseInt(request.getParameter("food_c2"));
+%>
+</body>
+</html>

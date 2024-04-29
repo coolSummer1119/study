@@ -1,0 +1,43 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page import="kr.util.DBUtil" %>
+<%@ page import="java.sql.Connection" %>
+<%@ page import="java.sql.PreparedStatement" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>제품 등록</title>
+<link rel="stylesheet" href="../CSS/style.css" type="text/css">
+</head>
+<body>
+<%
+	Connection conn=null;
+	PreparedStatement pstmt =null;
+	String sql = null;
+	
+	String name = request.getParameter("name");
+	int price = Integer.parseInt(request.getParameter("price"));
+	int stock = Integer.parseInt(request.getParameter("stock"));
+	String origin = request.getParameter("origin");
+	
+	try{
+		conn = DBUtil.getConnection();
+		sql = "INSERT INTO product (num,name,price,stock,origin,reg_date) VALUES (product_seq.nextval,?,?,?,?,SYSDATE)";
+		pstmt = conn.prepareStatement(sql);
+		pstmt.setString(1, name);
+		pstmt.setInt(2, price);
+		pstmt.setInt(3, stock);
+		pstmt.setString(4, origin);
+		
+		
+		
+	}catch(Exception e){
+		e.printStackTrace();
+	}finally{
+		DBUtil.excuteClose(null, pstmt, conn);
+	}
+%>
+
+</body>
+</html>

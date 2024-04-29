@@ -1,0 +1,22 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>[실습]회원가입</title>
+</head>
+<body>
+<%-- 이름 (name), 아이디(id), 비밀번호(password), 전화번호(phone),취미(hobby) -영화보기, 음악감상, 등산, 낚시, 춤
+	자기소개(content) - textarea
+	
+	s06_register.jsp로 전송 , 전송 방식post
+	출력예시
+	이름 : 홍길동
+	아이디 : dragon
+	비밀번호 : 1234
+	전화번호 : 010-1234-5678
+	자기소개 : 서울에서 태어나서 계속 서울 거주
+ --%>
+</body>
+</html>
