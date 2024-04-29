@@ -42,10 +42,8 @@ public class MemberDAO {
 			
 			//sql문 실행
 			pstmt.executeUpdate();
-			
-			
 		}catch(Exception e) {
-			throw new Exception(e) ;			
+			
 		}finally {
 			DBUtil.excuteClose(null, pstmt, conn);
 		}
@@ -71,24 +69,7 @@ public class MemberDAO {
 		MemberVO member=null;
 		String sql =null;
 		
-		try {
-			conn = DBUtil.getConnection();
-			sql="SELECT * FROM smember WHERE id=?";
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, id);
-			rs = pstmt.executeQuery();
-			if(rs.next()) {
-				member=new MemberVO();
-				member.setId(rs.getString("id"));
-				member.setNum(rs.getInt("num"));
-				member.setPasswd(rs.getString("passwd"));
-			}
-			
-		}catch(Exception e) {
-			throw new Exception(e);
-		}finally {
-			DBUtil.excuteClose(rs, pstmt, conn);
-		}
+
 	
 		return member;
 	}

@@ -71,3 +71,10 @@
 0:0:0:0:0:0:0:1 - - [29/Apr/2024:15:32:17 +0900] "GET /ch03_Jsp/CSS/style.css HTTP/1.1" 304 -
 127.0.0.1 - - [29/Apr/2024:16:45:05 +0900] "GET / HTTP/1.1" 404 807
 0:0:0:0:0:0:0:1 - - [29/Apr/2024:16:45:05 +0900] "GET /ch03_Jsp/ch17_member/registerUserForm.jsp HTTP/1.1" 200 1270
+127.0.0.1 - - [29/Apr/2024:17:05:02 +0900] "GET / HTTP/1.1" 404 807
+0:0:0:0:0:0:0:1 - - [29/Apr/2024:17:05:02 +0900] "GET /ch03_Jsp/ch17_member/registerUserForm.jsp HTTP/1.1" 200 1347
+0:0:0:0:0:0:0:1 - - [29/Apr/2024:17:05:18 +0900] "GET /ch03_Jsp/ch17_member/registerUserForm.jsp HTTP/1.1" 200 1368
+127.0.0.1 - - [29/Apr/2024:17:18:13 +0900] "GET / HTTP/1.1" 404 807
+0:0:0:0:0:0:0:1 - - [29/Apr/2024:17:18:14 +0900] "GET /ch03_Jsp/ch17_member/registerUser.jsp HTTP/1.1" 500 270
+0:0:0:0:0:0:0:1 - - [29/Apr/2024:17:18:21 +0900] "GET /ch03_Jsp/ch17_member/registerUserForm.jsp HTTP/1.1" 200 1368
+0:0:0:0:0:0:0:1 - - [29/Apr/2024:17:18:35 +0900] "POST /ch03_Jsp/ch17_member/registerUser.jsp HTTP/1.1" 200 435

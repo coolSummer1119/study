@@ -32,20 +32,9 @@ public class MemberDAO {
 			conn = DBUtil.getConnection();
 			//sql문 작성
 			sql = "INSERT INTO smember (num,id,name,passwd,email,phone) VALUES (smember_seq.nextval,?,?,?,?,?)";
-			//PreparedStatement 객체 생성
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, member.getId());
-			pstmt.setString(2, member.getName());
-			pstmt.setString(3, member.getPasswd());
-			pstmt.setString(4, member.getEmail());
-			pstmt.setString(5, member.getPhone());
-			
-			//sql문 실행
-			pstmt.executeUpdate();
-			
 			
 		}catch(Exception e) {
-			throw new Exception(e) ;			
+			e.printStackTrace();
 		}finally {
 			DBUtil.excuteClose(null, pstmt, conn);
 		}
@@ -71,24 +60,7 @@ public class MemberDAO {
 		MemberVO member=null;
 		String sql =null;
 		
-		try {
-			conn = DBUtil.getConnection();
-			sql="SELECT * FROM smember WHERE id=?";
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, id);
-			rs = pstmt.executeQuery();
-			if(rs.next()) {
-				member=new MemberVO();
-				member.setId(rs.getString("id"));
-				member.setNum(rs.getInt("num"));
-				member.setPasswd(rs.getString("passwd"));
-			}
-			
-		}catch(Exception e) {
-			throw new Exception(e);
-		}finally {
-			DBUtil.excuteClose(rs, pstmt, conn);
-		}
+
 	
 		return member;
 	}

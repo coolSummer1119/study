@@ -4,10 +4,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title></title>
+<title>회원가입</title>
+<link rel="stylesheet" href="../CSS/style.css" type="text/css">
 </head>
 <body>
-	<h1>회원가입</h1>
+	<h1 class="align-center">회원가입</h1>
 		<form action="registerUser.jsp" method="post" id="register_form">
 			<ul>
 				<li>
