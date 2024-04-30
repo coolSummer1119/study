@@ -1,0 +1,25 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page import="kr.member.vo.MemberDAO" %>
+<%@ page import="kr.member.vo.MemberVO" %>
+<%
+	Integer user_num = (Integer)session.getAttribute("user_num");
+	if(user_num==null){//로그인이 되지 않은 경우
+		response.sendRedirect("loginForm.jsp");
+	}else{//로그인 된 경우
+%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>회원정보수정</title>
+</head>
+<body>
+<%	
+
+%>
+</body>
+</html>
+<%	
+	}
+%>
