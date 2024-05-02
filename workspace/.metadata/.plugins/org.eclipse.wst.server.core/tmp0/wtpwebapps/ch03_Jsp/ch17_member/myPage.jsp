@@ -30,7 +30,7 @@
 		<li>이름 : <%= member.getName() %> </li>
 		<li>이메일 : <%= member.getEmail() %> </li>
 		<li>전화번호 : <%= member.getPhone() %> </li>
-		<li> 가입일 : <%= member.getReg_date() %> </li>
+		<li>가입일 : <%= member.getReg_date() %> </li>
 	</ul>
 	<hr size="1" width="100%" noshade="noshade">
 	<div class="align-right">

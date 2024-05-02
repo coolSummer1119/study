@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="com.sun.net.httpserver.Authenticator.Result"/>
-    <fullyQualifiedTypeName name="oracle.net.aso.f"/>
-    <fullyQualifiedTypeName name="java.nio.file.FileSystemLoopException"/>
     <fullyQualifiedTypeName name="java.sql.CallableStatement"/>
     <fullyQualifiedTypeName name="java.lang.Float"/>
     <fullyQualifiedTypeName name="kr.s36.jdbc.note.NoteDAO"/>
@@ -50,14 +47,17 @@
     <fullyQualifiedTypeName name="javax.naming.Context"/>
     <fullyQualifiedTypeName name="javax.naming.InitialContext"/>
     <fullyQualifiedTypeName name="javax.sql.DataSource"/>
-    <fullyQualifiedTypeName name="java.sql.Date"/>
     <fullyQualifiedTypeName name="kr.board.vo.BoardDAO"/>
     <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="kr.board.vo.BoardVO"/>
+    <fullyQualifiedTypeName name="java.awt.dnd.DropTargetListener"/>
+    <fullyQualifiedTypeName name="java.sql.Date"/>
+    <fullyQualifiedTypeName name="kr.employee.vo.EmployeeDAO"/>
     <fullyQualifiedTypeName name="java.sql.ResultSet"/>
     <fullyQualifiedTypeName name="java.sql.Connection"/>
     <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="java.lang.Exception"/>
     <fullyQualifiedTypeName name="kr.util.DBUtil"/>
-    <fullyQualifiedTypeName name="kr.board.vo.BoardVO"/>
+    <fullyQualifiedTypeName name="kr.employee.vo.EmployeeVO"/>
 </qualifiedTypeNameHistroy>

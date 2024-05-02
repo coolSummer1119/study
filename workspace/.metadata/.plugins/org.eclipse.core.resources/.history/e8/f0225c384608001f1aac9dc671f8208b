@@ -1,0 +1,44 @@
+package kr.employee.vo;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+public class EmployeeDAO {
+	//싱글턴 패턴
+	private static EmployeeDAO instance = new EmployeeDAO();
+	
+	public static EmployeeDAO getInstance() {
+		return instance;
+	}
+	private  EmployeeDAO() {
+		
+	}
+	//사원등록
+	public void insertEmployee(EmployeeVO vo)throws Exception{
+		
+	}
+	
+	//사원 상세정보
+	public EmployeeVO getEmployee(int num)throws Exception{
+		Connection connection = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		EmployeeVO vo = null;
+		String sql = null;
+		
+		return vo;
+	}
+	
+	//아이디 중복 체크, 로그인 체크
+	public EmployeeVO checkEmployee(String id) throws Exception{
+		Connection connection = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		EmployeeVO vo = null;
+		String sql = null;
+
+		
+		return vo;
+	}
+}

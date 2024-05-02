@@ -1,8 +1,0 @@
-package kr.util;
-
-public class DBUtil {
-	private static final String driverName = "oracle.jdbc.OracleDriver";
-	private static final String jdbcUrl = "jdbc:oracle:thin:@localhost:1521:xe";
-	private static final String dbId = "user01";
-	private static final String dbPass = "1234";
-}

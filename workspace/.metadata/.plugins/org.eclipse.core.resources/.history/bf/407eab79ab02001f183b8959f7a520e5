@@ -1,7 +1,0 @@
-window.onload=function(){
-	const myForm = document.getElementById('myForm');
-	//이벤트 연결
-	myForm.onsubmit=function(){
-		const items = document.querySelectorAll('input[type="text"],input[type="password"],textarea');
-	};
-};

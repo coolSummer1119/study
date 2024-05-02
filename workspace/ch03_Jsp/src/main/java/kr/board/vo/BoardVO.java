@@ -12,7 +12,13 @@ public class BoardVO {
 	private String ip;
 	private Date reg_date;
 	
-	
+	//비밀번호 체크
+	public boolean isCheckedPassword(String userPasswd) {
+		if(passwd.equals(userPasswd)) {//인증성공
+			return true;
+		}
+		return false;//인증 실패
+	}
 	
 	public int getNum() {
 		return num;

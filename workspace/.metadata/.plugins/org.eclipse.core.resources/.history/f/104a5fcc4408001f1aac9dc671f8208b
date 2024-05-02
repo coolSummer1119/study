@@ -1,0 +1,7 @@
+package kr.employee.vo;
+
+public class EmployeeVO {
+	//프로퍼티
+	private int num;
+	private String id;
+}

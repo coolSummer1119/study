@@ -53,7 +53,26 @@ public class BoardDAO {
 		ResultSet rs =null;
 		String sql = null;
 		int count =0;
-		
+		try {
+			//커넥션풀로부터 커넥션을 할당
+			conn=DBUtil.getConnection();
+			//SQL문 작성
+			//        컬럼인덱스 1
+			sql="SELECT COUNT(*) FROM mboard";
+			
+			//pstmt 객체 생성
+			pstmt = conn.prepareStatement(sql);
+			//SQL문 실행
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				count = rs.getInt(1);//컬럼 인덱스 1
+			}
+			
+		}catch(Exception e) {
+			throw new Exception(e);
+		}finally {
+			DBUtil.excuteClose(rs, pstmt, conn);
+		}
 		return count;
 	}
 	
@@ -67,8 +86,11 @@ public class BoardDAO {
 		
 		try {
 			conn=DBUtil.getConnection();
-			sql="SELECT * FROM mboard ORDER BY num DESC";
+			sql="SELECT * FROM (SELECT a.*, rownum rnum FROM "
+					+ "(SELECT * FROM mboard ORDER BY num DESC)a) WHERE rnum>=? AND rnum<=?";
 			pstmt=conn.prepareStatement(sql);
+			pstmt.setInt(1, startRow);
+			pstmt.setInt(2, endRow);
 			rs = pstmt.executeQuery();
 			list = new ArrayList<BoardVO>();
 			while(rs.next()) {
@@ -125,10 +147,54 @@ public class BoardDAO {
 	
 	//글 수정
 	public void update(BoardVO boardVO)throws Exception{
-		
+		Connection conn= null;
+		PreparedStatement pstmt = null;
+		String sql = null;
+		try {
+			//커넥션 풀로부터 커넥션 할당
+			conn=DBUtil.getConnection();
+			//sql문 작성
+			sql="UPDATE mboard SET title=?,name=?,content=?,ip=? WHERE num=?";
+			//pstmt 객체 생성
+			pstmt = conn.prepareStatement(sql);
+			//데이터 바인딩
+			pstmt.setString(1,boardVO.getTitle());
+			pstmt.setString(2,boardVO.getName());
+			pstmt.setString(3,boardVO.getContent());
+			pstmt.setString(4,boardVO.getIp());
+			pstmt.setInt(5,boardVO.getNum());
+			//sql문 실행
+			pstmt.executeUpdate();
+			
+			
+		}catch(Exception e) {
+			throw new Exception(e);
+		}finally {
+			DBUtil.excuteClose(null, pstmt, conn);
+		}
 	}
 	//글삭제 
 	public void delete(int num)throws Exception{
-		
+		Connection conn= null;
+		PreparedStatement pstmt = null;
+		String sql = null;
+		try {
+			//커넥션 풀로부터 커넥션 할당
+			conn=DBUtil.getConnection();
+			//sql문 작성
+			sql="DELETE FROM mboard WHERE num=?";
+			//pstmt 객체 생성
+			pstmt = conn.prepareStatement(sql);
+			//데이터 바인딩
+			pstmt.setInt(1,num);
+			//sql문 실행
+			pstmt.executeUpdate();
+			
+			
+		}catch(Exception e) {
+			throw new Exception(e);
+		}finally {
+			DBUtil.excuteClose(null, pstmt, conn);
+		}
 	}
 }
