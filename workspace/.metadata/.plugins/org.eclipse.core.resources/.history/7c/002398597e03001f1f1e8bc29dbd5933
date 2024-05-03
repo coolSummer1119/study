@@ -1,7 +1,0 @@
-<%@ page language="java" contentType="text/plane; charset=UTF-8"
-    pageEncoding="UTF-8" trimDirectiveWhitespaces="true"%>
-[{
-	"name":"장영실",
-	"job":"과학자",
-	"age":50
-},{}]

@@ -1,0 +1,5 @@
+package kr.stroy.dao;
+
+public class StoryDAO {
+
+}

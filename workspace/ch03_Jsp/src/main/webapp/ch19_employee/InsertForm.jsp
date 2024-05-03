@@ -65,7 +65,7 @@ $(document).ready(function(){
 </head>
 <body>
 <div class="page-main">
-<h1>직원 추가</h1>
+<h1>사원 추가</h1>
 	<form id="insert_form" action="insert.jsp" method="post">
 		<ul>
 			<li>

@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>직원관리 메인</title>
+<title>사원관리 메인</title>
 <link rel="stylesheet" href="../CSS/style.css" type="text/css">
 </head>
 <body>
@@ -12,8 +12,9 @@
 	String user_id = (String)session.getAttribute("user_id");
 %>
 <div class="page-main">
-	<h1>회원관리 메인</h1>
+	<h1>사원관리 메인</h1>
 	<div class="align-right">
+		<a href="list.jsp">사원 이야기</a>
 		<%
 			if(user_id==null){//로그인이 되지 않은 경우
 		%>

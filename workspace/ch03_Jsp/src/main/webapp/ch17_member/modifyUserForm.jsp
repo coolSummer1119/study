@@ -13,8 +13,6 @@
 <head>
 <meta charset="UTF-8">
 <title>회원정보수정</title>
-<link rel="stylesheet" href="<%= request.getContextPath() %>/CSS/style.css" type="text/css">
-<script type="text/javascript" src="<%= request.getContextPath() %>/js/jquery-3.7.1.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
 	$('#modify_form').submit(function(){

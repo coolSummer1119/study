@@ -1,0 +1,5 @@
+package kr.story.vo;
+
+public class StoryVO {
+
+}

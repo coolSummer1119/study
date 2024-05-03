@@ -105,11 +105,56 @@ public class EmployeeDAO {
 	
 	//사원정보 수정
 	public void updateEmployee(EmployeeVO vo)throws Exception{
-		
+		Connection conn =null;
+		PreparedStatement pstmt = null;
+		String sql = null;
+		try {
+			//connetion풀에 연결
+			conn= DBUtil.getConnection();
+			//sql문 작성
+			sql="UPDATE semployee SET name=?,salary=?,job=? WHERE num=?";
+			//preparedStatement객체 생성
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, vo.getName());
+			pstmt.setInt(2, vo.getSalary());
+			pstmt.setString(3, vo.getJob());
+			pstmt.setInt(4, vo.getNum());
+			//sql문 실행
+			pstmt.executeUpdate();
+			
+		}catch(Exception e) {
+			throw  new Exception(e);
+		}finally {
+			DBUtil.excuteClose(null, pstmt, conn);
+		}
 	}
 	//사원정보 삭제
 	public void deleteEmployee(int num)throws Exception{
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		PreparedStatement pstmt2 = null;
 		
+		String sql = null;
+		try {
+			conn = DBUtil.getConnection();
+			conn.setAutoCommit(false);
+			sql = "DELETE FROM story WHERE num=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, num);
+			pstmt.executeUpdate();
+					
+			sql = "DELETE FROM semployee WHERE num=?";
+			pstmt2 = conn.prepareStatement(sql);
+			pstmt2.setInt(1, num);
+			pstmt2.executeUpdate();
+			
+			
+		}catch(Exception e) {
+			throw new Exception(e);
+		}finally {
+			DBUtil.excuteClose(null, pstmt2, conn);
+			DBUtil.excuteClose(null, pstmt, conn);
+		}
 	}
 	
 }

@@ -4,7 +4,7 @@
 <%@ page import="kr.board.vo.BoardVO" %>
 
 <%
-	//전송된데이터 인쾽 타입 지정
+	//전송된데이터 인타입 지정
 	request.setCharacterEncoding("utf-8");
 
 %>

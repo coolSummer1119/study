@@ -32,7 +32,7 @@
 	<hr size="1" width="100%" noshade="noshade">
 	<div class="align-right">
 		<input type="button" value="직원정보수정" onclick="location.href='modifyEmployeeForm.jsp'">
-		<input type="button" value="삭제" onclick="location.href='deleteUserForm.jsp'">
+		<input type="button" value="삭제" onclick="location.href='deleteForm.jsp'">
 		<input type="button" value="홈으로" onclick="location.href='main.jsp'">
 	</div>
 </div>

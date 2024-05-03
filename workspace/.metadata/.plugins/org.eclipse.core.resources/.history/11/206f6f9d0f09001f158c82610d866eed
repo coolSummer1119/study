@@ -1,0 +1,24 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page import="kr.story.dao.StoryDAO" %>
+<%@ page import="kr.story.vo.StoryVO" %>
+<%
+	Integer user_snum = (Integer)session.getAttribute("user_snum");
+
+	if(user_snum==null){//로그인이 되지 않은 경우
+		response.sendRedirect("loginForm.jsp");
+	}else{//로그인 된 경우
+		
+		StoryDAO dao = StoryDAO.getInstance();
+		
+%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+</html>

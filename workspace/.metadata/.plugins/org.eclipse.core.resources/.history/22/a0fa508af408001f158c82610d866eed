@@ -1,0 +1,16 @@
+package kr.story.vo;
+
+import java.sql.Date;
+
+public class StoryVO {
+	//프로퍼티
+	private int snum;
+	private String title;
+	private String content;
+	private String ip;
+	private int num; //회원관리의 기본키
+	private Date reg_date;
+	
+	private String id;
+	
+}

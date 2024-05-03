@@ -1,0 +1,21 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page import="kr.story.dao.StoryDAO" %>
+<%
+	request.setCharacterEncoding("utf-8");
+%>
+<jsp:useBean id="story" class="kr.story.vo.StoryVO"/>
+<jsp:setProperty name="story" property="*"/>
+<%
+	story.setIp(request.getRemoteAddr());
+%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+</html>

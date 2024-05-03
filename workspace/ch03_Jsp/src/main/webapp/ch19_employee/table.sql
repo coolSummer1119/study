@@ -9,3 +9,16 @@ create table semployee(
 );
 
 create sequence semployee_seq;
+--사원게시판
+create table story(
+ snum number not null,
+ title varchar2(150) not null,
+ content clob not null,
+ ip varchar2(30) not null,
+ num number not null,
+ reg_date date default sysdate not null,
+ constraint story_pk primary key (snum),
+ constraint story_fk foreign key (num) references semployee (num)
+);
+
+create sequence story_seq;
