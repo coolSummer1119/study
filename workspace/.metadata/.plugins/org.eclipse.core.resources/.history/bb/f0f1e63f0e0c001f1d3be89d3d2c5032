@@ -1,0 +1,17 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>EL Test</title>
+</head>
+<body>
+<%
+	pageContext.setAttribute("msg", "봄");
+	request.setAttribute("msg2","여름");
+	session.setAttribute("msg3", "가을");
+	application.setAttribute("msg4", "겨울");
+%>
+</body>
+</html>

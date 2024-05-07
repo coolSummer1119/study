@@ -1,0 +1,15 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>표현언어의 사용 예제</title>
+</head>
+<body>
+<h3>표현언어의 - 파라미터 값 처리</h3>
+<form action="s02_el.jsp" method="post">
+
+</form>
+</body>
+</html>
