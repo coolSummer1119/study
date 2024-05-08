@@ -1,0 +1,28 @@
+package kr.board.action;
+
+import java.io.IOException;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import kr.board.dao.BoardDAO;
+import kr.controller.Action;
+
+public class ListAction implements Action{
+
+	@Override
+	public String execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		//선택한 페이지 반환
+		String pageNum = request.getParameter("pageNum");
+		if(pageNum==null) pageNum="1";
+		
+		BoardDAO dao = BoardDAO.getInstance();
+		int count = dao.getCount();
+		
+		
+		
+		//JSP 경로 반환
+		return "/WEB-INF/views/list.jsp";
+	}
+	
+}

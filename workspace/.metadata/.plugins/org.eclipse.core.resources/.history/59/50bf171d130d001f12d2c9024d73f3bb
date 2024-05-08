@@ -1,0 +1,19 @@
+package kr.board.action;
+
+import java.io.IOException;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import kr.controller.Action;
+
+public class ListAction implements Action{
+
+	@Override
+	public String execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		
+		//JSP 경로 반환
+		return "/WEB-INF/views/list.jsp";
+	}
+	
+}

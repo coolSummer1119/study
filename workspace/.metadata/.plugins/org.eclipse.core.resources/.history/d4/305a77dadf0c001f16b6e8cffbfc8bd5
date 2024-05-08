@@ -1,0 +1,5 @@
+package kr.web.mvc;
+
+public class DetailAction {
+
+}

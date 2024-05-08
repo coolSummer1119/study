@@ -17,6 +17,5 @@
 <c:forTokens items="2024-05-07 14:09:20" var="now" delims=" :-">
 	${now}<br>
 </c:forTokens>
-
 </body>
 </html>

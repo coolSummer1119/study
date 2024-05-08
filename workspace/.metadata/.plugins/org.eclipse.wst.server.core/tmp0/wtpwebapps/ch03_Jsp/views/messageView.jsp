@@ -9,6 +9,5 @@
 <body>
 결과 : <%= request.getAttribute("result") %><br>
 결과 : ${result}<br>
-
 </body>
 </html>

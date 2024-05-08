@@ -167,6 +167,13 @@
 	maxIdle : 커넥션 풀 유지를 위해 최대 대기 커넥션 숫자
 	-->
     <Resource auth="Container" driverClassName="oracle.jdbc.OracleDriver" maxIdle="10" maxTotal="20" name="jdbc/xe" password="1234" type="javax.sql.DataSource" url="jdbc:oracle:thin:@localhost:1521:xe" username="user01"/>
+</Context><Context docBase="C:\javaWork\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ch04_mvcBoard" path="/ch04_mvcBoard" reloadable="true" source="org.eclipse.jst.jee.server:ch04_mvcBoard">
+	<!-- 
+	auth : 컨테이너를 자원 관리자로 기술 
+	maxTotal : 커넥션 풀에서 생성되는 최대 커넥션 숫자 
+	maxIdle : 커넥션 풀 유지를 위해 최대 대기 커넥션 숫자
+	-->
+    <Resource auth="Container" driverClassName="oracle.jdbc.OracleDriver" maxIdle="10" maxTotal="20" name="jdbc/xe" password="1234" type="javax.sql.DataSource" url="jdbc:oracle:thin:@localhost:1521:xe" username="user01"/>
 </Context></Host>
     </Engine>
   </Service>
