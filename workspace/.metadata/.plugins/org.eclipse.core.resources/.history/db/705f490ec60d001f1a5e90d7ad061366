@@ -1,0 +1,31 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>뉴스 등록</title>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css" type="text/css">
+</head>
+<body>
+<div class="page-main">
+	<h2>뉴스 등록</h2>
+	<form id="write_form" action="write.do" method="post" enctype="multipart/form-data">
+		<ul>
+			<li>
+				<label for="title">제목</label>
+				<input type="text" name="title" id="title" size="30" maxlength="50" class="input-check">
+			</li>
+			<li>
+				<label for="writer">작성자</label>
+				<input type="text" name="writer" id="writer" size="10" maxlength="10" class="input-check">
+			</li>
+			<li>
+				<label for="writer">작성자</label>
+				<input type="text" name="writer" id="writer" size="10" maxlength="10" class="input-check">
+			</li>
+		</ul>
+	</form>
+</div>
+</body>
+</html>

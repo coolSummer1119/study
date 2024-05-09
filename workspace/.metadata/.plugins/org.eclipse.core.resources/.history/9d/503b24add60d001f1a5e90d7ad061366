@@ -1,0 +1,3 @@
+/list.do=kr.news.action.ListAction
+/writeForm.do=kr.news.action.WriteFormAction
+/write.do=kr.news.action.WriteAction

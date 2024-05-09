@@ -1,0 +1,11 @@
+package kr.news.dao;
+
+public class NewsDAO {
+	//싱글턴 패턴
+	private static NewsDAO instance = new NewsDAO();
+	
+	public static NewsDAO getInstance() {
+		return instance;
+	}
+	private NewsDAO() {}
+}

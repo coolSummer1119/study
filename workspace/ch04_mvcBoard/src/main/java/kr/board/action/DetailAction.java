@@ -1,0 +1,27 @@
+package kr.board.action;
+
+import java.io.IOException;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import kr.board.dao.BoardDAO;
+import kr.board.vo.BoardVO;
+import kr.controller.Action;
+
+public class DetailAction implements Action{
+
+	@Override
+	public String execute(HttpServletRequest request, HttpServletResponse response) throws IOException, Exception {
+		int num = Integer.parseInt(request.getParameter("num"));
+		
+		BoardDAO dao = BoardDAO.getInstance();
+		BoardVO boardVO = dao.getBoard(num);
+		
+		request.setAttribute("boardVO", boardVO);
+		
+		//JSP 경로 반환
+		return "/WEB-INF/views/detail.jsp";
+	}
+
+}

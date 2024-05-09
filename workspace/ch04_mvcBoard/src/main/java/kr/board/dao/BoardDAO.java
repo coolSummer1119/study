@@ -130,17 +130,86 @@ public class BoardDAO {
 		BoardVO board = null;
 		String sql = null;
 		
+		try {
+			//커넥션 풀에서 커넥션 할당
+			conn = DBUtil.getConnection();
+			//sql문 작성
+			sql = "SELECT * FROM svboard WHERE num = ? ";
+			//pstmt객체 생성
+			pstmt = conn.prepareStatement(sql);
+			//데이터 바인딩
+			pstmt.setInt(1, num);
+			//sql문 실행
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				board = new BoardVO();
+				board.setNum(rs.getInt("num"));
+				board.setTitle(rs.getString("title"));
+				board.setName(rs.getString("name"));
+				board.setPasswd(rs.getString("passwd"));
+				board.setEmail(rs.getString("email"));
+				board.setContent(rs.getString("content"));
+				board.setReg_date(rs.getDate("reg_date"));
+			}
+			
+			
+		}catch(Exception e) {
+			throw new Exception(e);
+		}finally {
+			DBUtil.excuteClose(rs, pstmt, conn);
+		}
 		
 		return board;
 	}
 	
 	//글 수정
 	public void update(BoardVO boardVO)throws Exception{
-		
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		String sql = null;
+		try {
+			//커넥션풀에서 커넥션 할당 
+			conn = DBUtil.getConnection();
+			//sql문 작성
+			sql = "UPDATE svboard SET title=?,name=?,email=?,content=?,ip=? WHERE num=?";
+			//pstmt객체 생성
+			pstmt = conn.prepareStatement(sql);
+			//데이터 바인딩
+			pstmt.setString(1, boardVO.getTitle());
+			pstmt.setString(2, boardVO.getName());
+			pstmt.setString(3, boardVO.getEmail());
+			pstmt.setString(4, boardVO.getContent());
+			pstmt.setString(5, boardVO.getIp());
+			pstmt.setInt(6, boardVO.getNum());
+			//sql문 실행 
+			pstmt.executeUpdate();
+		}catch(Exception e) {
+			throw new Exception(e);
+		}finally {
+			DBUtil.excuteClose(null, pstmt, conn);
+		}
 	}
 	
 	//글 삭제
 	public void delete(int num)throws Exception{
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		String sql = null;
+		try {
+			//커넥션풀에서 커넥션 할당 
+			conn = DBUtil.getConnection();
+			//sql문 작성
+			sql = "DELETE FROM svboard WHERE num=?";
+			//pstmt객체 생성
+			pstmt = conn.prepareStatement(sql);
+			//데이터 바인딩
+			pstmt.setInt(1, num);
+			pstmt.executeUpdate();
+		}catch(Exception e) {
+			throw new Exception(e);
+		}finally {
+			DBUtil.excuteClose(null, pstmt, conn);
+		}
 		
 	}
 }

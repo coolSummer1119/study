@@ -1,0 +1,12 @@
+package kr.news.vo;
+
+public class NewsVO {
+	private int num;
+	private String title;
+	private String writer;
+	private String passwd;
+	private String email;
+	private String article;
+	private String filename;
+	private Date reg_date;
+}

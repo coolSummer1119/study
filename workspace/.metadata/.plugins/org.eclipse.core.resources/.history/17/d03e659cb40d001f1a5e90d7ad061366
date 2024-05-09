@@ -1,0 +1,11 @@
+package kr.util;
+
+public class FileUtil {
+	//업로드 상대경로
+	private static final String UPLOAD_PATE= "/upload";
+	
+	//파일 생성
+	
+	
+	//파일 삭제
+}

@@ -1,0 +1,74 @@
+package kr.news.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.List;
+
+import kr.news.vo.NewsVO;
+
+public class NewsDAO {
+	//싱글턴 패턴
+	private static NewsDAO instance = new NewsDAO();
+	
+	public static NewsDAO getInstance() {
+		return instance;
+	}
+	private NewsDAO() {}
+	
+	//뉴스 등록
+	public void registerNews(NewsVO vo)throws Exception{
+		
+	}
+	
+	//뉴스 총 개수
+	public int getCount()throws Exception{
+		Connection conn= null;
+		PreparedStatement pstmt=null;
+		ResultSet rs = null;
+		int count = 0;
+		String sql =null;
+		
+		
+		
+		return count;
+	}
+	
+	//목록
+	public List<NewsVO> getList(int startRow,int endRow) throws Exception{
+		Connection conn= null;
+		PreparedStatement pstmt=null;
+		ResultSet rs = null;
+		List<NewsVO> list = null;
+		String sql =null;
+		
+		
+		
+		return list;
+	}
+	
+	//뉴스 상세 정보
+	public NewsVO getNews(int num)throws Exception{
+		Connection conn= null;
+		PreparedStatement pstmt=null;
+		ResultSet rs = null;
+		NewsVO vo =null;
+		String sql =null;
+		
+		
+		
+		return vo;
+	}
+		
+	//뉴스 수정
+	public void updateNews(NewsVO vo)throws Exception{
+		
+	}
+	
+	//뉴스 삭제
+	public void deleteNews(int num)throws Exception{
+		
+	}
+	
+		
+}

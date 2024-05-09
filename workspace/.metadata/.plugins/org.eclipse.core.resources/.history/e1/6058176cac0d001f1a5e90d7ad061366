@@ -1,0 +1,22 @@
+package kr.board.action;
+
+import java.io.IOException;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import kr.controller.Action;
+
+public class DeleteAction implements Action{
+
+	@Override
+	public String execute(HttpServletRequest request, HttpServletResponse response) throws IOException, Exception {
+		//전송된 데이터 인코딩 타입 지정
+		request.setCharacterEncoding("utf-8");
+		
+		int num = Integer.parseInt(request.getParameter("num"));
+		
+		return null;
+	}
+
+}

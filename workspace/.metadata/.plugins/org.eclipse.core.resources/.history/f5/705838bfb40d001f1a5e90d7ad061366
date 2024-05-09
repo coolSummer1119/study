@@ -1,0 +1,23 @@
+package kr.util;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class FileUtil {
+	//업로드 상대경로
+	private static final String UPLOAD_PATE= "/upload";
+	
+	//파일 생성
+	
+	
+	//파일 삭제
+	public static void removeFile(HttpServletRequest request,String filename) {
+		if(filename!=null) {
+			//업로드 절대 경로
+			String upload = request.getServletContext().getRealPath(UPLOAD_PATE);
+			
+		}
+		
+		
+	}
+}
